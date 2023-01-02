@@ -1,0 +1,4 @@
+GET  http://localhost:5000/register
+
+###
+GET http://localhost:5000/login
