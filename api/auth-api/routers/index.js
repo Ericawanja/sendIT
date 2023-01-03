@@ -6,7 +6,7 @@ const login = require('../controllers/login')
 
 
 
-router.get("/register", register)
-router.get("/login", login)
+router.post("/register", register)
+router.post("/login", login)
 
 module.exports = router
