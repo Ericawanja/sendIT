@@ -1,4 +1,13 @@
-GET  http://localhost:5000/register
+###
+POST  http://localhost:5000/register
+Content-Type: application/json
+
+{   
+    "firstname":"Erica",
+    "lastname":"erica",
+    "email":"wan@gmail.com",
+    "password":"3456789"
+}
 
 ###
-GET http://localhost:5000/login
+POST  http://localhost:5000/login
