@@ -1,5 +1,5 @@
 CREATE
-OR ALTER PROCEDURE getUser (@id varchar(150)) As Begin
+OR ALTER PROCEDURE getUser (@email varchar(150)) As Begin
 select
     id,
     firstname,
@@ -10,5 +10,5 @@ select
 from
     users
 where
-    id = @id
+    email = @email
 End
