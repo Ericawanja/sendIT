@@ -1,2 +1,13 @@
 ###
+POST  http://localhost:5000/register
+Content-Type: application/json
+
+{   
+    "firstname":"Erica",
+    "lastname":"erica",
+    "email":"wan@gmail.com",
+    "password":"3456789"
+}
+
+###
 POST  http://localhost:5000/login

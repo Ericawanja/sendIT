@@ -38,10 +38,10 @@ const getOneParcel = async (req, res) => {
   };
 
   const getUserParticularParcel = async (req, res) => {
-    const {orderId, userId} = req.params
+    const {state, userId} = req.params
 
     try {
-      const parcels = await exec("getCustomerParticularParcel", {orderId, customerId:userId});
+      const parcels = await exec("getCustomerParticularParcel", {state, customerId:userId});
       if (parcels.length === 0)
         return res.status(404).json({ message: "No parcel found" });
       res.status(200).json({ parcels });

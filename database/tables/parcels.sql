@@ -1,6 +1,7 @@
 create table parcels(
     orderId varchar(150) unique NOT NULL,
-    customerid varchar(150) FOREIGN KEY REFERENCES USERS(id),
+    sender varchar(150) FOREIGN KEY REFERENCES USERS(id),
+	recepient varchar(150) FOREIGN KEY REFERENCES USERS(id),
     _from varchar(200) NOT NULL,
     destination varchar(200) NOT NULL,
     weight DECIMAL NOT NULL,

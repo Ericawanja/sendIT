@@ -2,7 +2,8 @@ CREATE
 OR ALTER PROCEDURE getAllParcels As Begin
 select
     orderId,
-    customerId,
+    sender,
+	recepient,
     _from,
     destination,
     weight,

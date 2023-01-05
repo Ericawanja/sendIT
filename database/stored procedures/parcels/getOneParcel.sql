@@ -6,7 +6,8 @@ OR ALTER PROCEDURE getOneParcel (
 As Begin
 select
     orderId,
-    customerId,
+	sender,
+	recepient,
     _from,
     destination,
     weight,
