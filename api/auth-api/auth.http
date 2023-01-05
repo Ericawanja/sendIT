@@ -3,11 +3,19 @@ POST  http://localhost:5000/register
 Content-Type: application/json
 
 {   
-    "firstname":"Erica",
-    "lastname":"erica",
-    "email":"wan@gmail.com",
-    "password":"3456789"
+    "firstname":"Doe",
+    "lastname":"John",
+    "email":"doe@gmail.com",
+    "password":"123456789",
+    "isAdmin":"yes"
 }
 
 ###
 POST  http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"wan@gmail.com",
+    "password":"123456789"
+
+}
