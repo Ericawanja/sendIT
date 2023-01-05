@@ -1,5 +1,5 @@
 const express = require("express");
-const verify = require("../../auth-api/middlewares/verify");
+const verify = require("../middlewares/verify");
 const { getAllParcels, getOneParcel, getCustomerParcels, getUserParticularParcel } = require("../controllers/parcelControllers");
 const router = express.Router()
 
