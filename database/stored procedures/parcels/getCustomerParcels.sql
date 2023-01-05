@@ -1,20 +1,19 @@
 CREATE
-OR ALTER PROCEDURE getCustomerParcels (
-@customerId varchar(150)
-)
-
-As Begin
+OR ALTER PROCEDURE getCustomerParcels (@customerId varchar(150)) As Begin
 select
     orderId,
-    customerId,
+    sender,
+    recepient,
     _from,
     destination,
     weight,
     price,
-    status
+    status parcels
 from
     parcels
 where
-    isdeleted = 0 AND customerId= @customerId
+    isdeleted = 0
+    AND sender = @customerId
+    OR recepient = @customerId
 End
 go

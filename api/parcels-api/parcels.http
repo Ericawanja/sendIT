@@ -1,1 +1,13 @@
 GET http://localhost:4000
+
+###
+GET http://localhost:4000/124
+
+###
+GET http://localhost:4000/users/ec11242e-8203-427f-8ef8-236a47bb0307/parcels
+
+###
+GET http://localhost:4000/users/ec11242e-8203-427f-8ef8-236a47bb0307/parcels/sent
+
+###
+GET http://localhost:4000/users/ec11242e-8203-427f-8ef8-236a47bb0307/parcels/received
