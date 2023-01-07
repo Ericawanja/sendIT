@@ -1,14 +1,33 @@
-const createParcel = (req,res)=>{
-    console.log(req.info);
-    res.status(200).json({message:"succss"})
+const shortid = require('shortid')
+const { exec } = require("../helpers/db_connect");
 
-}
+const createParcel = async (req, res) => {
+  const loggedUser = req.info;
+  if (!loggedUser.isAdmin)
+    return res
+      .status(401)
+      .json({ message: "You do not have the priviledge to create a delivery" });
 
-const updateParcel = (req,res)=>{
+  try {
+    
+    const parcel = req.body
+    const orderId = shortid.generate()
 
-}
+
+    await exec("createOrUpdateParcel", {orderId, ...parcel})
+
+   return res
+   .status(200)
+   .json({ message: "You have successfully created the parcel" });
+
+  } catch (error) {
+    res.status(400).json({ error: error.originalError.info.message });
+  }
+};
+
+const updateParcel = (req, res) => {};
 
 module.exports = {
-    createParcel,
-    updateParcel
-}
+  createParcel,
+  updateParcel,
+};
