@@ -2,7 +2,7 @@ GET http://localhost:4000
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2NmRhNWNkLTBkM2YtNDY5ZS1hZGE3LTI4ZDUzZTU2MWQzZSIsImZpcnN0bmFtZSI6IkRvZSIsImxhc3RuYW1lIjoiSm9obiIsImVtYWlsIjoiZG9lQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2Nzg5IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjczMTcwODc2LCJleHAiOjE2NzMyNTcyNzZ9.pgEBbEFsB07uqwEWpRRj9pl5SrGXwtpO2Pb3MRGBwd8
 
 ###
-GET http://localhost:4000/124
+GET http://localhost:4000/134
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2NmRhNWNkLTBkM2YtNDY5ZS1hZGE3LTI4ZDUzZTU2MWQzZSIsImZpcnN0bmFtZSI6IkRvZSIsImxhc3RuYW1lIjoiSm9obiIsImVtYWlsIjoiZG9lQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2Nzg5IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjczMTcwODc2LCJleHAiOjE2NzMyNTcyNzZ9.pgEBbEFsB07uqwEWpRRj9pl5SrGXwtpO2Pb3MRGBwd8
 
 
@@ -33,7 +33,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2NmRhNWNkL
 }
 
 ###
-POST http://localhost:4000/134
+PUT  http://localhost:4000/134
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2NmRhNWNkLTBkM2YtNDY5ZS1hZGE3LTI4ZDUzZTU2MWQzZSIsImZpcnN0bmFtZSI6IkRvZSIsImxhc3RuYW1lIjoiSm9obiIsImVtYWlsIjoiZG9lQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2Nzg5IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjczMTcwODc2LCJleHAiOjE2NzMyNTcyNzZ9.pgEBbEFsB07uqwEWpRRj9pl5SrGXwtpO2Pb3MRGBwd8
 
@@ -46,3 +46,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2NmRhNWNkL
      "price": 500,
      "status":"onTransit"
 }
+
+###
+DELETE   http://localhost:4000/134
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2NmRhNWNkLTBkM2YtNDY5ZS1hZGE3LTI4ZDUzZTU2MWQzZSIsImZpcnN0bmFtZSI6IkRvZSIsImxhc3RuYW1lIjoiSm9obiIsImVtYWlsIjoiZG9lQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2Nzg5IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjczMTcwODc2LCJleHAiOjE2NzMyNTcyNzZ9.pgEBbEFsB07uqwEWpRRj9pl5SrGXwtpO2Pb3MRGBwd8
