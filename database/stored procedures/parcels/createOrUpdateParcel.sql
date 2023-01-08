@@ -16,7 +16,7 @@ from
     parcels
 where
     orderId = @orderId
-    And isdeleted = 0 if @exists = NULL
+    And isdeleted = 0 if @exists = 0
 insert into
     parcels
 values
