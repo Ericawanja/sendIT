@@ -1,7 +1,7 @@
 const express = require("express");
 const verify = require("../middlewares/verify");
-const { getAllParcels, getOneParcel, getCustomerParcels, getUserParticularParcel } = require("../controllers/parcelControllers");
-const { createParcel, updateParcel } = require("../controllers/adminControllers");
+const { getAllParcels, getOneParcel} = require("../controllers/parcelControllers");
+const { createParcel, updateParcel, getCustomerParcels, getUserParticularParcel } = require("../controllers/adminControllers");
 const router = express.Router()
 
 

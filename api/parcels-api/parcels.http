@@ -23,8 +23,8 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2NmRhNWNkLTBkM2YtNDY5ZS1hZGE3LTI4ZDUzZTU2MWQzZSIsImZpcnN0bmFtZSI6IkRvZSIsImxhc3RuYW1lIjoiSm9obiIsImVtYWlsIjoiZG9lQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2Nzg5IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjczMTcwODc2LCJleHAiOjE2NzMyNTcyNzZ9.pgEBbEFsB07uqwEWpRRj9pl5SrGXwtpO2Pb3MRGBwd8
 
 {
-     "sender": "ec11242e-8203-427f-8ef8-236a47bb0307",
-     "recepient": "d17ddf1d-f073-4b96-b37b-7e1b455c2748",
+    "sender": "d17ddf1d-f073-4b96-b37b-7e1b455c2748",
+     "recepient": "ec11242e-8203-427f-8ef8-236a47bb0307",
      "_from": "Nyeri",
      "destination":"Karatina",
      "weight":8.0,
@@ -38,8 +38,8 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2NmRhNWNkLTBkM2YtNDY5ZS1hZGE3LTI4ZDUzZTU2MWQzZSIsImZpcnN0bmFtZSI6IkRvZSIsImxhc3RuYW1lIjoiSm9obiIsImVtYWlsIjoiZG9lQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2Nzg5IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjczMTcwODc2LCJleHAiOjE2NzMyNTcyNzZ9.pgEBbEFsB07uqwEWpRRj9pl5SrGXwtpO2Pb3MRGBwd8
 
 {
-     "sender": "ec11242e-8203-427f-8ef8-236a47bb0307",
-     "recepient": "d17ddf1d-f073-4b96-b37b-7e1b455c2748",
+     "sender": "d17ddf1d-f073-4b96-b37b-7e1b455c2748",
+     "recepient": "ec11242e-8203-427f-8ef8-236a47bb0307",
      "_from": "Nairobi",
      "destination":"Karatina",
      "weight":8.0,
