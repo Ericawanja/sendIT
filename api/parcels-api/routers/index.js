@@ -1,7 +1,7 @@
 const express = require("express");
 const verify = require("../middlewares/verify");
 const { getAllParcels, getOneParcel, getCustomerParcels, getUserParticularParcel } = require("../controllers/parcelControllers");
-const { createParcel } = require("../controllers/adminControllers");
+const { createParcel, updateParcel } = require("../controllers/adminControllers");
 const router = express.Router()
 
 
@@ -12,6 +12,8 @@ router.get('/users/:userId/parcels',  verify, getCustomerParcels)
 router.get('/users/:userId/parcels/:state',verify, getUserParticularParcel)
 
 router.post('/',verify, createParcel)
+
+router.post('/:orderId',verify, updateParcel)
 
 
 module.exports= router;
