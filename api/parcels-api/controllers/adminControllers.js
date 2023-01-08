@@ -12,7 +12,7 @@ const createParcel = async (req, res) => {
     const parcel = req.body;
     const orderId = shortid.generate();
 
-     await exec("createOrUpdateParcel", { orderId, ...parcel });
+    await exec("createOrUpdateParcel", { orderId, ...parcel });
 
     return res
       .status(200)
@@ -31,15 +31,13 @@ const updateParcel = async (req, res) => {
 
   try {
     const parcel = req.body;
-    const parcelInDB = await exec("getOneParcel", { orderId: parcel.orderId });
+    const { orderId } = req.params;
+    const parcelInDB = await exec("getOneParcel", { orderId });
 
     if (parcelInDB.length === 0)
-      return res
-        .status(404)
-        .json({ message: "The parcel does not exist" });
+      return res.status(404).json({ message: "The parcel does not exist" });
 
-
-    await exec("createOrUpdateParcel", { ...parcel });
+    await exec("createOrUpdateParcel", { orderId,...parcel });
 
     return res
       .status(200)
