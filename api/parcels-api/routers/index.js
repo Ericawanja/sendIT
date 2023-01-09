@@ -1,10 +1,9 @@
 const express = require("express");
 const verify = require("../middlewares/verify");
-const { getAllParcels, getOneParcel} = require("../controllers/parcelControllers");
-const { createParcel, updateParcel, getCustomerParcels, getUserParticularParcel, cancelParcel } = require("../controllers/adminControllers");
 const router = express.Router()
 
-
+const { getAllParcels, getOneParcel} = require("../controllers/parcelControllers");
+const { createParcel, updateParcel, getCustomerParcels, getUserParticularParcel, cancelParcel } = require("../controllers/adminControllers");
 
 router.get('/', verify, getAllParcels)
 router.get('/:orderId', verify, getOneParcel)
@@ -15,6 +14,8 @@ router.post('/',verify, createParcel)
 
 router.put('/:orderId',verify, updateParcel)
 router.delete('/:orderId',verify, cancelParcel)
+
+
 
 
 module.exports= router;
