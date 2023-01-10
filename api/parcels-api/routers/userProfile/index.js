@@ -1,6 +1,7 @@
 const express = require("express");
 const { getAllYourParcels, getParcelsSent, getParcelsReceived } = require("../../controllers/userControllers");
-const verify = require("../middlewares/verify");
+const verify = require("../../middlewares/verify");
+
 const router = express.Router()
 
 
