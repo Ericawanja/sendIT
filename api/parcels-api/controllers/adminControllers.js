@@ -80,7 +80,7 @@ const cancelParcel = async (req, res) => {
   if (!loggedUser.isAdmin)
     return res
       .status(401)
-      .json({ message: "You do not have the priviledge to create a delivery" });
+      .json({ message: "You do not have the priviledge to cancel a delivery" });
   try {
     const { orderId } = req.params;
 
