@@ -2,7 +2,8 @@
   padding: 0;
   margin: 0;
 }
-body {
+
+.landingBodyContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +12,6 @@ body {
 }
 .landingContainer {
   width: 70%;
-
   background-color: white;
   padding: 30px;
 }
@@ -22,13 +22,14 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  padding: 0 30px;
 }
 .logoIcon {
-  color: rgb(84, 186, 185);
-  size: 19px;
+  color: rgb(214,161,79);
+  font-size: 30px;
 }
 .logoName {
-  color: rgb(84, 186, 185);
+  color: rgb(214,161,79);
   font-style: italic;
   font-size: 1.3rem;
 }
@@ -37,9 +38,10 @@ body {
   display: flex;
   gap: 10px;
 }
-.right span {
+.right span a {
   cursor: pointer;
-  color: rgb(84, 186, 185);
+  color: rgb(214,161,79);
+  text-decoration: none;
 }
 .landingIntro {
   display: grid;
@@ -49,9 +51,50 @@ body {
 }
 .landingBenefits h2{
     text-align: center;
+    line-height: 3;
+    color: rgb(15,17,56);
 }
 
 .benefitsWrapper{
+    display: grid;
+    grid-template-columns: 27% 27% 27%;
+    gap: 35px;
+    justify-content: center;
+   
+}
+.benefits{
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 1px inset;
+padding: 25px 15px;
+}
+.benefits .icon{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+.benefitsIcon{
+  font-size: 50px;
+  color: rgba(214,161,79, .7);
+}
+.benefitDetails h3{
+  text-align: center;
+  padding-bottom: 20px;
+  color: rgb(15,17,56);
+  font-size: .9rem;
+}
+.benefitDetails p{
+  font-size: .8rem;
+  letter-spacing: 1.6px;
+  word-spacing: 2px;
+}
+.getStartedBtn{
+  display: flex;
+  justify-content: center;
+ padding: 60px ;
+}
+.getStartedBtn a{
+  text-decoration: none;
+  color: #f7ecde;
+  background-color: rgba(214,161,79);
+  padding: 15px;
+  cursor: pointer;
 }

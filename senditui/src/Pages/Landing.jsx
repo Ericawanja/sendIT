@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/styles.Landing.css";
+import { Link } from "react-router-dom";
 import {
   GiCargoShip,
   GiWorld,
@@ -9,7 +10,7 @@ import {
 
 function Landing() {
   return (
-    <div className="bodyContainer">
+    <div className="landingBodyContainer">
       <div className="landingContainer">
         <div className="landingHeader">
           <div className="logo">
@@ -19,8 +20,8 @@ function Landing() {
             <span className="logoName">SendIT</span>
           </div>
           <div className="right">
-            <span className="register">Register</span>
-            <span className="login">Log in</span>
+            <span className="register"><Link to="/register">Register</Link></span>
+            <span className="login"><Link to="/login">Log in</Link></span>
           </div>
         </div>
         <div className="landingMain">
@@ -40,7 +41,7 @@ function Landing() {
           <div className="benefitsWrapper">
             <div className="benefits">
               <span className="icon">
-                <GiWorld />
+                <GiWorld className="benefitsIcon"/>
               </span>
               <span className="benefitDetails">
                 <h3>Anywhere in the world Delivery</h3>
@@ -53,7 +54,7 @@ function Landing() {
             </div>
             <div className="benefits">
               <span className="icon">
-                <GiHeavyTimer />
+                <GiHeavyTimer className="benefitsIcon" />
               </span>
               <span className="benefitDetails">
                 <h3>Now- Right on Time</h3>
@@ -66,7 +67,7 @@ function Landing() {
             </div>
             <div className="benefits">
               <span className="icon">
-                <GiTimeSynchronization />
+                <GiTimeSynchronization  className="benefitsIcon" />
               </span>
               <span className="benefitDetails">
                 <h3>Any time- 24 hrs operation</h3>
@@ -78,6 +79,9 @@ function Landing() {
               </span>
             </div>
           </div>
+        </div>
+        <div className="getStartedBtn">
+          <Link to="/register">Get started</Link>
         </div>
       </div>
     </div>
