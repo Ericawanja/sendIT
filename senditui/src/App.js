@@ -1,8 +1,8 @@
 
 import './App.css';
 import Landing from './Pages/Landing';
-import Login from './Pages/Login';
- import Register from './Pages/Register';
+// import Login from './Pages/Login';
+//  import Register from './Pages/Register';
 
 function App() {
   return (
