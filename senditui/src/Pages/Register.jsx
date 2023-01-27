@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./styles/styles.Register.css";
 
 function Register() {
@@ -7,7 +8,7 @@ function Register() {
       <div className="registerWrapper">
         <div className="registerHeader">
           <span className="register">Register</span>
-          <span className="back">Back</span>
+          <span className="back"><Link to="/">Back</Link> </span>
         </div>
         <div className="formWrapper">
           <label htmlFor="firstname">Enter your firstname</label>
