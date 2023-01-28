@@ -5,9 +5,9 @@ Content-Type: application/json
 {   
     "firstname":"Doe",
     "lastname":"John",
-    "email":"doe@gmail.com",
-    "password":"123456789",
-    "isAdmin":"yes"
+    "email":"john@gmail.com",
+    "password":"123456789"
+   
 }
 
 ###
