@@ -55,7 +55,12 @@
     background-color: #579BB1;
     padding: 10px;
     color: #f8f4ea;
-    cursor: pointer;
+    
+}
+.loading{
+  cursor:not-allowed;
+  opacity: .4;
+  pointer-events: none;
 }
 
 @media only screen and (max-width: 700px){

@@ -22,6 +22,8 @@ const userSlice = createSlice({
     })
     builder.addCase(registerUser.rejected, (state, action)=>{
         state.loading = false
+       
+        state.error = action.payload.error
     })
   },
 });
