@@ -1,1 +1,13 @@
+.alertContainer{
+    display: flex;
+    gap: 10px;
+    padding: 20px;
 
+}
+.alert, .alertMessage{
+  color: red;
+
+}
+.alertMessage{
+   
+}

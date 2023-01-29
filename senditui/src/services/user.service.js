@@ -12,7 +12,7 @@ class UserSevice {
       
     } catch (error) {
         console.log(error);
-      let message = error?.response?.data?.message || "An error occured. Please try again later";
+      let message = error.response.data.message || "An error occured. Please try again later";
       return { data: null, error: message };
     }
   }
