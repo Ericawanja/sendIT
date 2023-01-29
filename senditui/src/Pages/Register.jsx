@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Alert from "../Components/Alert";
 import { registerUser } from "../redux/thunks/user.thunks";
 
 import "./styles/styles.Register.css";
@@ -8,7 +9,7 @@ import "./styles/styles.Register.css";
 function Register() {
   let dispatch = useDispatch();
   const user = useSelector((state) => state);
-  console.log(user);
+ 
 
   const [registerDetails, setDetails] = useState({
     firstname: "",
@@ -39,6 +40,7 @@ function Register() {
           </span>
         </div>
         <div className="formWrapper">
+          <Alert message= {`The alert`}/>
           <label htmlFor="firstname">Enter your firstname</label>
           <input
             type="text"
