@@ -8,7 +8,8 @@ import "./styles/styles.Register.css";
 
 function Register() {
   let dispatch = useDispatch();
-  const user = useSelector((state) => state);
+  const {loading, error} = useSelector((state) => state);
+
  
 
   const [registerDetails, setDetails] = useState({
@@ -40,7 +41,7 @@ function Register() {
           </span>
         </div>
         <div className="formWrapper">
-          <Alert message= {`The alert`}/>
+          {error && <Alert message= {error}/>}
           <label htmlFor="firstname">Enter your firstname</label>
           <input
             type="text"
@@ -83,7 +84,7 @@ function Register() {
           <span className="btns">
             <button
               onClick={handleSubmit}
-              className={user.loading ? "loading" : ""}
+              className={loading ? "loading" : ""}
             >
               Submit
             </button>
