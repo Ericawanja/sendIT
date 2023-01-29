@@ -4,6 +4,7 @@ const registerSchema = Joi.object({
     firstname:Joi.string().min(2).max(20).required(),
     lastname:Joi.string().min(2).max(20).required(),
     password: Joi.string().required().min(8).max(20),
+    confirmPassword: Joi.string().required().min(8).max(20),
     isAdmin:Joi.string(),
     email: Joi.string().required().email({
       minDomainSegments: 2,
