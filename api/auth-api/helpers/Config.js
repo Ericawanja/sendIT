@@ -1,6 +1,6 @@
 const sql = require("mssql");
 require("dotenv").config();
-console.log(process.env.DB_USER, process.env.DB_PWD, process.env.DB_NAME);
+
 
 const sqlConfig = {
   user: process.env.DB_USER,

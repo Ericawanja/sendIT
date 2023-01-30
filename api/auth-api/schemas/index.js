@@ -14,13 +14,13 @@ const registerSchema = Joi.object({
 });
 
 const loginSchema = Joi.object({
-  password: Joi.string().required().min(8).max(20),
   email: Joi.string()
     .required()
     .email({
       minDomainSegments: 2,
       tlds: { allow: ["com", "net"] },
     }),
+  password: Joi.string().required().min(8).max(20),
 });
 
 module.exports = {
