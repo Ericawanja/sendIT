@@ -7,12 +7,14 @@ class UserSevice {
     try {
       let url = `${this.BASE_URL}/register`;
       const response = await axios.post(url, details);
-      console.log(response);
+     
       return response;
       
     } catch (error) {
-        console.log(error);
-      let message = error.response.data.message || "An error occured. Please try again later";
+      
+      let message = "An error occured. Please try again later";
+      // error?.response?.data?.message || 
+    
       return { data: null, error: message };
     }
   }

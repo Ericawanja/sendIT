@@ -1,6 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import { useDispatch, useSelector } from "react-redux";
+
 import Alert from "../Components/Alert";
 import { registerUser } from "../redux/thunks/user.thunks";
 
@@ -8,7 +13,8 @@ import "./styles/styles.Register.css";
 
 function Register() {
   let dispatch = useDispatch();
-  const {loading, error} = useSelector((state) => state);
+  const navigate = useNavigate()
+  const {loading, error, registered} = useSelector((state) => state);
 
  
 
@@ -31,6 +37,14 @@ function Register() {
   const handleSubmit = () => {
     dispatch(registerUser(registerDetails));
   };
+
+  useEffect(()=>{
+    if(registered){
+      navigate("/login")
+
+    }
+
+  }, [registered])
   return (
     <div className="registerContainer">
       <div className="registerWrapper">
