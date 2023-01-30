@@ -12,7 +12,7 @@ export const registerUser = createAsyncThunk(
             return thunkApi.rejectWithValue({ error: response.error });
 
         }
-        console.log(response);
-        return  response
+        
+        return  response.data
     }
 )
