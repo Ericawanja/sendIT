@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px 15px 60px;
+  background-color: rgb(14, 16, 55);
+  max-width: 100%;
+}
+.navitems {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 40%;
+}
+.navitems span {
+  color: rgb(232, 151, 40);
+}
