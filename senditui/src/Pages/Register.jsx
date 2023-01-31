@@ -10,13 +10,12 @@ import Alert from "../Components/Alert";
 import { registerUser } from "../redux/thunks/user.thunks";
 
 import "./styles/styles.Register.css";
+import { resetState } from "../redux/slices/user.slice";
 
 function Register() {
   let dispatch = useDispatch();
-  const navigate = useNavigate()
-  const {loading, error, registered} = useSelector((state) => state);
-
- 
+  const navigate = useNavigate();
+  const { loading, error, registered } = useSelector((state) => state);
 
   const [registerDetails, setDetails] = useState({
     firstname: "",
@@ -32,30 +31,39 @@ function Register() {
     setDetails({ ...registerDetails, [name]: value });
   };
 
-  const handleCancel = () => {};
+  const handleCancel = () => {
+    setDetails({
+      firstname: "",
+      lastname: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
+    dispatch(resetState());
+  };
 
   const handleSubmit = () => {
     dispatch(registerUser(registerDetails));
   };
 
-  useEffect(()=>{
-    if(registered){
-      navigate("/login")
+ 
 
+  useEffect(() => {
+    if (registered) {
+      navigate("/login");
     }
-
-  }, [registered])
+  }, [registered]);
   return (
     <div className="registerContainer">
       <div className="registerWrapper">
         <div className="registerHeader">
           <span className="register">Register</span>
-          <span className="back">
+          <span className="back" onClick={handleCancel}>
             <Link to="/">Back</Link>{" "}
           </span>
         </div>
         <div className="formWrapper">
-          {error && <Alert message= {error}/>}
+          {error && <Alert message={error} />}
           <label htmlFor="firstname">Enter your firstname</label>
           <input
             type="text"
@@ -96,10 +104,7 @@ function Register() {
             onChange={handleInputChange}
           />
           <span className="btns">
-            <button
-              onClick={handleSubmit}
-              className={loading ? "loading" : ""}
-            >
+            <button onClick={handleSubmit} className={loading ? "loading" : ""}>
               Submit
             </button>
             <button onClick={handleCancel}>Cancel</button>

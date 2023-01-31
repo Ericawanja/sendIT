@@ -9,13 +9,14 @@ import "./styles/styles.Login.css";
 import { loginUser } from "../redux/thunks/user.thunks";
 import Alert from "../Components/Alert";
 import { useEffect } from "react";
+import { resetState } from "../redux/slices/user.slice";
 
 function Login() {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const {error, user} = useSelector(state=>state)
-  
+  const { error, user } = useSelector((state) => state);
+
   const [loginDetails, setLoginDetails] = useState({
     email: "",
     password: "",
@@ -32,23 +33,32 @@ function Login() {
     dispatch(loginUser(loginDetails));
   };
 
-  useEffect(()=>{
-    if(user){
-      navigate("/")
-    }
+  const handleCancel = () => {
+    setLoginDetails({
+      email: "",
+      password: "",
+    });
+    dispatch(resetState())
+  };
 
-  }, [user])
+  
+
+  useEffect(() => {
+    // if(user){
+    //   navigate("/")
+    // }
+  }, [user]);
   return (
     <div className="loginContainer">
       <div className="loginWrapper">
         <div className="loginHeader">
           <span className="login">Login</span>
-          <span className="back">
+          <span className="back" onClick={handleCancel}>
             <Link to="/">Back</Link>
           </span>
         </div>
         <div className="loginForm">
-          {error && <Alert message= {error}/>}
+          {error && <Alert message={error} />}
           <label htmlFor="email">Enter your Email</label>
           <input
             type="email"
@@ -69,7 +79,7 @@ function Login() {
             <button type="submit" onClick={handleLogin}>
               Submit
             </button>
-            <button>Cancel</button>
+            <button onClick={handleCancel}>Cancel</button>
           </span>
         </div>
       </div>
