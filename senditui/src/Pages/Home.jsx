@@ -1,11 +1,12 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
+import Orders from '../Components/Orders'
 
 function Home() {
   return (
     <div>
         <Navbar/>
-        <div>table</div>
+        <Orders/>
         <div>footer</div>
     </div>
   )
