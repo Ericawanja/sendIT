@@ -20,4 +20,5 @@
 }
 .navitems span {
   color: rgb(232, 151, 40);
+  cursor: pointer;
 }

@@ -44,9 +44,9 @@ function Login() {
   
 
   useEffect(() => {
-    // if(user){
-    //   navigate("/")
-    // }
+     if(user.firstname){
+       navigate("/home")
+    }
   }, [user]);
   return (
     <div className="loginContainer">
