@@ -1,7 +1,14 @@
 import React from "react";
-import "./orders.css"
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserParcels } from "../../redux/thunks/userParcels.thunks";
+import "./orders.css";
 
 function Orders() {
+  const dispatch = useDispatch();
+
+  const { parcels } = useSelector((state) => state);
+  console.log(parcels);
   const dummyParcels = [
     {
       orderId: 9605,
@@ -52,9 +59,15 @@ function Orders() {
       status: "delivered",
     },
   ];
+
+  useEffect(() => {
+    dispatch(getUserParcels());
+  }, []);
   return (
     <div className="tableContainer">
-      <span className="searchInput"><input type="text" placeholder="Search parcel..." /></span>
+      <span className="searchInput">
+        <input type="text" placeholder="Search parcel..." />
+      </span>
       <table>
         <thead>
           <th>Order Id</th>
@@ -64,18 +77,20 @@ function Orders() {
           <th>Price</th>
           <th>Status</th>
         </thead>
-        {dummyParcels.map((parcel) => {
-          return (
-            <tr>
-              <td>{parcel.orderId}</td>
-              <td>{parcel.from}</td>
-              <td>{parcel.destination}</td>
-              <td>{parcel.weight}</td>
-              <td>{parcel.price}</td>
-              <td>{parcel.status}</td>
-            </tr>
-          );
-        })}
+        <tbody>
+          {dummyParcels.map((parcel) => {
+            return (
+              <tr>
+                <td>{parcel.orderId}</td>
+                <td>{parcel.from}</td>
+                <td>{parcel.destination}</td>
+                <td>{parcel.weight}</td>
+                <td>{parcel.price}</td>
+                <td>{parcel.status}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );
