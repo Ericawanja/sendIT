@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../Components/Footer'
 import Navbar from '../Components/Navbar'
 import Orders from '../Components/Orders'
 
@@ -7,7 +8,7 @@ function Home() {
     <div>
         <Navbar/>
         <Orders/>
-        <div>footer</div>
+        <Footer/>
     </div>
   )
 }
