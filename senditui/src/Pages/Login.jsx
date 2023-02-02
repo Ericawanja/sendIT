@@ -15,7 +15,9 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { error, user } = useSelector((state) => state);
+  const {user, error, loading} = useSelector((state) => state.user);
+  console.log(user, error, loading);
+
 
   const [loginDetails, setLoginDetails] = useState({
     email: "",
@@ -44,6 +46,7 @@ function Login() {
   
 
   useEffect(() => {
+    
      if(user.firstname){
        navigate("/home")
     }

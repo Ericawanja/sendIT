@@ -45,7 +45,7 @@ const userSlice = createSlice({
       state.loading = false;
       state.error = "";
 
-      // console.log(action.payload);
+      console.log(action.payload.user);
       localStorage.setItem('token', action.payload)
       state.user = action.payload.user;
     });
