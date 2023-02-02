@@ -1,0 +1,54 @@
+.footerContainer {
+  background-color: rgb(14, 16, 55);
+}
+.footerWrapper {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 40%;
+  gap: 30px;
+
+  width: 80%;
+  margin: auto;
+  padding: 15px 0;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: wheat;
+}
+.columnTitle {
+  color: white;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+.complaint {
+  display: flex;
+  flex-direction: column;
+}
+.complaintForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.complaintForm label {
+  color: wheat;
+}
+.complaintForm input {
+  padding: 4px;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+textarea {
+  padding: 5px;
+  font-size: 1.2rem;
+  outline: none;
+}
+.complaintBtns{
+    display: flex;
+    gap: 10px;
+}
+.complaintBtns button{
+    padding: 4px;
+    cursor: pointer;
+}
