@@ -70,17 +70,19 @@ function Orders() {
       </span>
       <table>
         <thead>
-          <th>Order Id</th>
-          <th>From</th>
-          <th>Destination</th>
-          <th>Weight</th>
-          <th>Price</th>
-          <th>Status</th>
+          <tr>
+            <th>Order Id</th>
+            <th>From</th>
+            <th>Destination</th>
+            <th>Weight</th>
+            <th>Price</th>
+            <th>Status</th>
+          </tr>
         </thead>
         <tbody>
-          {dummyParcels.map((parcel) => {
+          {dummyParcels.map((parcel, index) => {
             return (
-              <tr>
+              <tr key={index}>
                 <td>{parcel.orderId}</td>
                 <td>{parcel.from}</td>
                 <td>{parcel.destination}</td>

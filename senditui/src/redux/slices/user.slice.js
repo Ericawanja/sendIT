@@ -12,12 +12,12 @@ const userSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
-    resetState: (state, action)=>{
-      state.loading = false
-      state.error = ""
-      state.registered = false
-      state.user = {}
-    }
+    resetState: (state, action) => {
+      state.loading = false;
+      state.error = "";
+      state.registered = false;
+      state.user = {};
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(registerUser.pending, (state, action) => {
@@ -45,8 +45,7 @@ const userSlice = createSlice({
       state.loading = false;
       state.error = "";
 
-      // console.log(action.payload);
-      localStorage.setItem('token', action.payload)
+      localStorage.setItem("token", JSON.stringify(action.payload.token));
       state.user = action.payload.user;
     });
     builder.addCase(loginUser.rejected, (state, action) => {
@@ -56,6 +55,6 @@ const userSlice = createSlice({
   },
 });
 
-export const {resetState} = userSlice.actions
+export const { resetState } = userSlice.actions;
 
 export default userSlice.reducer;

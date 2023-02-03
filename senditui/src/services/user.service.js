@@ -21,7 +21,7 @@ class UserSevice {
     try {
       let url = `${this.BASE_URL}/login`;
       const response = await axios.post(url, details);
-      console.log(response);
+      
       return response;
     } catch (error) {
       let message =
