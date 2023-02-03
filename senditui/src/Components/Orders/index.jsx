@@ -7,7 +7,7 @@ import "./orders.css";
 function Orders() {
   const dispatch = useDispatch();
 
-  const { parcels } = useSelector((state) => state);
+  const { parcels } = useSelector((state) => state.parcels);
   console.log(parcels);
   const dummyParcels = [
     {
@@ -80,11 +80,11 @@ function Orders() {
           </tr>
         </thead>
         <tbody>
-          {dummyParcels.map((parcel, index) => {
+          {parcels.length > 0 && parcels.map((parcel, index) => {
             return (
               <tr key={index}>
                 <td>{parcel.orderId}</td>
-                <td>{parcel.from}</td>
+                <td>{parcel._from}</td>
                 <td>{parcel.destination}</td>
                 <td>{parcel.weight}</td>
                 <td>{parcel.price}</td>
