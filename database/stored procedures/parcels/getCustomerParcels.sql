@@ -8,7 +8,7 @@ select
     destination,
     weight,
     price,
-    status parcels
+    status 
 from
     parcels
 where

@@ -24,6 +24,7 @@ th,
 td {
   text-align: center;
   padding: 10px;
+  text-transform: capitalize;
 }
 
 tr:nth-child(even) {
