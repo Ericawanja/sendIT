@@ -45,7 +45,7 @@ const userSlice = createSlice({
       state.loading = false;
       state.error = "";
 
-      localStorage.setItem("token", JSON.stringify(action.payload.token));
+      localStorage.setItem("token", action.payload.token);
       state.user = action.payload.user;
     });
     builder.addCase(loginUser.rejected, (state, action) => {

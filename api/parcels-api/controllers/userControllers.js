@@ -2,6 +2,7 @@ const { exec } = require("../helpers/db_connect");
 
 const getAllYourParcels = async (req, res) => {
   const  user  = req.info;
+  console.log(user);
  
   try {
     const parcels = await exec("getCustomerParcels", { customerId: user.id });
@@ -9,6 +10,7 @@ const getAllYourParcels = async (req, res) => {
       return res.status(404).json({ message: "No parcels found" });
     res.status(200).json({ parcels });
   } catch (error) {
+    console.log(error);
    
     res.status(400).json({ error });
   }
