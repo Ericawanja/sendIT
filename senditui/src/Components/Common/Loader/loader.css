@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.loader{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.loaderText{
+    color: rgb(14,16,55);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.loaderContainer {
+  border: 16px solid rgb(110, 110, 110);
+  border-radius: 50%;
+  border-top: 16px solid rgb(14,16,55);
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
