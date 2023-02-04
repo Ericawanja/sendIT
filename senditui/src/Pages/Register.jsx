@@ -10,7 +10,7 @@ import Alert from "../Components/Alert";
 import { registerUser } from "../redux/thunks/user.thunks";
 
 import "./styles/styles.Register.css";
-import { resetState } from "../redux/slices/user.slice";
+import { resetUserState } from "../redux/slices/user.slice";
 
 function Register() {
   let dispatch = useDispatch();
@@ -39,7 +39,7 @@ function Register() {
       password: "",
       confirmPassword: "",
     });
-    dispatch(resetState());
+    dispatch(resetUserState());
   };
 
   const handleSubmit = () => {

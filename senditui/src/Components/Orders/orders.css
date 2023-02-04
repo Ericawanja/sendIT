@@ -47,6 +47,19 @@ tr:nth-child(even) {
 
 }
 .signIn{
-  background-color: #8e8b8b;
-  padding: 10px;
+  background-color: #ebe6e6;
+  padding: 13px 10px;
+  cursor: pointer;
+}
+.emptyParcels{
+  color: rgb(14, 16, 55);
+  font-size: 1.3rem;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 90px 0;
+  gap: 30px;
+
 }

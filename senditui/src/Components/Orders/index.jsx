@@ -14,8 +14,8 @@ function Orders() {
   const { parcels, loading, error } = useSelector((state) => state.parcels);
 
   const handleSignIn = () => {
+    dispatch(resetParcelsState());
     navigate("/login");
-    dispatch(resetParcelsState())
   };
 
   useEffect(() => {
@@ -26,7 +26,9 @@ function Orders() {
       {error ? (
         <div className="errorContainer">
           <span className="error">{error}</span>
-          <span onClick={handleSignIn} className="signIn">Sign in</span>
+          <span onClick={handleSignIn} className="signIn">
+            Sign in
+          </span>
         </div>
       ) : loading ? (
         <Loader />
@@ -47,7 +49,7 @@ function Orders() {
               </tr>
             </thead>
             <tbody>
-              {parcels.length > 0 &&
+              {parcels.length > 0 ? (
                 parcels.map((parcel, index) => {
                   return (
                     <tr key={index}>
@@ -59,7 +61,10 @@ function Orders() {
                       <td>{parcel.status}</td>
                     </tr>
                   );
-                })}
+                })
+              ) : (
+                <div className="emptyOrders">No parcels found</div>
+              )}
             </tbody>
           </table>
         </div>
