@@ -17,7 +17,7 @@ class UserParcels {
 
 
     try {
-      let response = await axios.get(this.BASE_URL);
+      let response = await axios.get(this.BASE_URL, this.config) ;
       return response;
     } catch (error) {
     

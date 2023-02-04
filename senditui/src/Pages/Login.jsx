@@ -9,7 +9,7 @@ import "./styles/styles.Login.css";
 import { loginUser } from "../redux/thunks/user.thunks";
 import Alert from "../Components/Alert";
 import { useEffect } from "react";
-import { resetState } from "../redux/slices/user.slice";
+import { resetUserState } from "../redux/slices/user.slice";
 
 function Login() {
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ function Login() {
       email: "",
       password: "",
     });
-    dispatch(resetState())
+    dispatch(resetUserState())
   };
 
   

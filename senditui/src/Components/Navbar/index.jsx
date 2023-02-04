@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import Logo from "../Common/Logo";
 import "./navbar.css";
 import { resetParcelsState } from "../../redux/slices/userParcels.slice";
+import { resetUserState } from "../../redux/slices/user.slice";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ function Navbar() {
   const handleLogout = () => {
     navigate("/");
     dispatch(resetParcelsState());
+    dispatch(resetUserState())
   };
   return (
     <div className="navbar">
