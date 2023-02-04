@@ -17,12 +17,12 @@ class UserParcels {
 
 
     try {
-      let response = await axios.get(this.BASE_URL, this.config);
+      let response = await axios.get(this.BASE_URL);
       return response;
     } catch (error) {
     
       let message = "An error occured";
-      return { data: null, message };
+      return { data: null, error:message };
     }
   }
 }

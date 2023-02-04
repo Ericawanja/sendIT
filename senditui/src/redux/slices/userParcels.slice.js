@@ -26,11 +26,13 @@ const userParcels = createSlice({
     builder.addCase(getUserParcels.fulfilled, (state, action) => {
       state.error = "";
       state.loading = false;
+     
       state.parcels = action.payload.parcels;
     });
     builder.addCase(getUserParcels.rejected, (state, action)=>{
+     
       state.loading = false
-      state.error= action.payload.error
+      state.error= action.payload
       state.parcels = []
     })
   },
