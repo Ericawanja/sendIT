@@ -1,24 +1,35 @@
 import React from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserParcels } from "../../redux/thunks/userParcels.thunks";
 import Loader from "../Common/Loader/index";
 import "./orders.css";
+import { resetParcelsState } from "../../redux/slices/userParcels.slice";
 
 function Orders() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const { parcels, loading } = useSelector((state) => state.parcels);
-  console.log(parcels);
-  let dummyL = true;
+  const { parcels, loading, error } = useSelector((state) => state.parcels);
+
+  const handleSignIn = () => {
+    navigate("/login");
+    dispatch(resetParcelsState())
+  };
 
   useEffect(() => {
     dispatch(getUserParcels());
   }, []);
   return (
     <>
-      {dummyL ? (
-       <Loader/>
+      {error ? (
+        <div className="errorContainer">
+          <span className="error">{error}</span>
+          <span onClick={handleSignIn} className="signIn">Sign in</span>
+        </div>
+      ) : loading ? (
+        <Loader />
       ) : (
         <div className="tableContainer">
           <span className="searchInput">

@@ -5,10 +5,13 @@ export const getUserParcels = createAsyncThunk(
   "get user parcels",
   async (payload, thunkApi) => {
     const response = await userParcelsService.GetAllUserParcels();
+ 
 
     if (response.error) {
-      thunkApi.rejectWithValue(response.error);
+      console.log(response);
+      return thunkApi.rejectWithValue(response.error);
     }
+   
     return response.data
   }
 );
