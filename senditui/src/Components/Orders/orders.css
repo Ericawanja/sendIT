@@ -4,7 +4,12 @@
 }
 .tableContainer span {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+.tableContainer h2{
+  text-transform: capitalize;
+  font-size: 1.7rem;
+  color: rgb(14, 16, 55);
 }
 .searchInput input {
   padding: 10px;
