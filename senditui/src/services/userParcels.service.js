@@ -2,7 +2,7 @@ import axios from "axios";
 
 class UserParcels {
   constructor() {
-    this.BASE_URL = `http://localhost:4000/profile`;
+    this.BASE_URL = `http://localhost:4000`;
 
     this.config = {
       headers: {
@@ -16,12 +16,24 @@ class UserParcels {
   async GetAllUserParcels(payload) {
     let url;
     if (payload === "received") {
-      url = `${this.BASE_URL}/parcels/received`;
+      url = `${this.BASE_URL}/profile/parcels/received`;
     } else if (payload === "sent") {
-      url = `${this.BASE_URL}/parcels/sent`;
+      url = `${this.BASE_URL}/profile/parcels/sent`;
     } else {
-      url = `${this.BASE_URL}/parcels`;
+      url = `${this.BASE_URL}/profile/parcels`;
     }
+
+    try {
+      let response = await axios.get(url, this.config);
+      return response;
+    } catch (error) {
+     
+      let message = "An error occured";
+      return { data: null, error: message };
+    }
+  }
+  async GetSingleUserParcel(payload) {
+    let url = `${this.BASE_URL}/${payload}`;
 
     try {
       let response = await axios.get(url, this.config);
@@ -32,8 +44,6 @@ class UserParcels {
       return { data: null, error: message };
     }
   }
-
- 
 }
 
 export default new UserParcels();
