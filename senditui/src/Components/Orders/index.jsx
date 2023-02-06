@@ -11,7 +11,9 @@ function Orders() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { parcels, loading, error } = useSelector((state) => state.parcels);
+  const { parcels, loading, error, status } = useSelector(
+    (state) => state.parcels
+  );
 
   const handleSignIn = () => {
     dispatch(resetParcelsState());
@@ -34,23 +36,29 @@ function Orders() {
         <Loader />
       ) : (
         <div className="tableContainer">
-          <span className="searchInput">
-            <input type="text" placeholder="Search parcel..." />
+          <span>
+            <h2>{status} Parcels</h2>
+            <input
+              className="searchInput"
+              type="text"
+              placeholder="Search parcel..."
+            />
           </span>
-          <table>
-            <thead>
-              <tr>
-                <th>Order Id</th>
-                <th>From</th>
-                <th>Destination</th>
-                <th>Weight</th>
-                <th>Price</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {parcels.length > 0 ? (
-                parcels.map((parcel, index) => {
+          {parcels.length > 0 ? (
+            <table>
+              <thead>
+                <tr>
+                  <th>Order Id</th>
+                  <th>From</th>
+                  <th>Destination</th>
+                  <th>Weight</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {parcels.map((parcel, index) => {
                   return (
                     <tr key={index}>
                       <td>{parcel.orderId}</td>
@@ -61,12 +69,22 @@ function Orders() {
                       <td>{parcel.status}</td>
                     </tr>
                   );
-                })
-              ) : (
-                <div className="emptyOrders">No parcels found</div>
+                })}
+              </tbody>
+            </table>
+          ) : (
+            <>
+              {status === "all" && (
+                <div className="emptyParcels"> No parcels sent or received yet</div>
               )}
-            </tbody>
-          </table>
+              {status === "received" && (
+                <div className="emptyParcels"> No parcels received yet</div>
+              )}
+              {status === "sent" && (
+                <div className="emptyParcels"> No parcels sent yet</div>
+              )}
+            </>
+          )}
         </div>
       )}
     </>

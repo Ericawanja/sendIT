@@ -1,11 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  
-  getUserParcels,
-} from "../thunks/userParcels.thunks";
+import { getUserParcels } from "../thunks/userParcels.thunks";
 
 const initialState = {
   parcels: {},
+  status: "",
   error: "",
   loading: false,
 };
@@ -29,7 +27,8 @@ const userParcels = createSlice({
     builder.addCase(getUserParcels.fulfilled, (state, action) => {
       state.error = "";
       state.loading = false;
-
+      console.log(action.payload);
+      state.status = action.payload.status;
       state.parcels = action.payload.parcels;
     });
     builder.addCase(getUserParcels.rejected, (state, action) => {
