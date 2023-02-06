@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserParcels } from "../../redux/thunks/userParcels.thunks";
+import { getUserParcels, getUserSingleParcel } from "../../redux/thunks/userParcels.thunks";
 import Loader from "../Common/Loader/index";
 import "./orders.css";
 import { resetParcelsState } from "../../redux/slices/userParcels.slice";
@@ -19,6 +19,9 @@ function Orders() {
     dispatch(resetParcelsState());
     navigate("/login");
   };
+  const handleGetParcel = (orderId)=>{
+    dispatch(getUserSingleParcel(orderId))
+  }
 
   useEffect(() => {
     dispatch(getUserParcels());
@@ -60,7 +63,7 @@ function Orders() {
               <tbody>
                 {parcels.map((parcel, index) => {
                   return (
-                    <tr key={index}>
+                    <tr key={parcel.orderId} onClick= {()=>handleGetParcel(parcel.orderId)}>
                       <td>{parcel.orderId}</td>
                       <td>{parcel._from}</td>
                       <td>{parcel.destination}</td>
