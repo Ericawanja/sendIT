@@ -15,9 +15,8 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const {user, error, loading} = useSelector((state) => state.user);
+  const { user, error, loading } = useSelector((state) => state.user);
   console.log(user, error, loading);
-
 
   const [loginDetails, setLoginDetails] = useState({
     email: "",
@@ -40,15 +39,13 @@ function Login() {
       email: "",
       password: "",
     });
-    dispatch(resetUserState())
+    dispatch(resetUserState());
   };
 
-  
-
   useEffect(() => {
-    
-     if(user.firstname){
-       navigate("/home")
+    if (user.firstname ) {
+     if(user.isAdmin) navigate("/admin")
+     else navigate("/home");
     }
   }, [user]);
   return (
