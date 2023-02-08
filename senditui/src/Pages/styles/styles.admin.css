@@ -43,21 +43,51 @@
   cursor: pointer;
 }
 .navItems span:hover {
-  background-color: antiquewhite;
-  padding: 10px 15px;
+  background-color: rgb(14, 16, 55);
+  padding: 15px 10px;
   color: rgb(223, 138, 47);
 }
-.signout{
-    display: flex;
-    gap: 10px;
-    align-items: baseline;
-    margin-top: 90px;
+.signout {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  margin-top: 90px;
 }
 
-.signout .text{
-    font-size: 1.2rem;
+.signout .text {
+  font-size: 1.2rem;
 }
 .signoutIcon {
-    color: rgb(197, 193, 193);
-  
+  color: rgb(197, 193, 193);
+}
+.statsWrapper {
+  padding: 40px 60px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 40px;
+  text-align: center;
+ 
+}
+.transit,
+.delivered,
+.created {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(1, 2, 29, 0.6);
+  padding: 20px;
+  width: 200px;
+}
+.statsWrapper .stat {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+.statsWrapper .smalltext{
+    font-size: .8rem;
+    color: gray;
+}
+.statsWrapper .title{
+    font-size: 1.2rem;
+    text-transform: capitalize;
 }
