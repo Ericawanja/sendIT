@@ -47,3 +47,17 @@
   padding: 10px 15px;
   color: rgb(223, 138, 47);
 }
+.signout{
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    margin-top: 90px;
+}
+
+.signout .text{
+    font-size: 1.2rem;
+}
+.signoutIcon {
+    color: rgb(197, 193, 193);
+  
+}

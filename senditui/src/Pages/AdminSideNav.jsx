@@ -1,4 +1,5 @@
 import React from "react";
+import {FaSignOutAlt} from "react-icons/fa"
 
 function AdminSideNav() {
   return (
@@ -13,6 +14,10 @@ function AdminSideNav() {
           <span>Delivered</span>
           <span>Recently created </span>
           <span>Recently delivered</span>
+        </div>
+        <div className="signout">
+            <span><FaSignOutAlt className="signoutIcon"/></span>
+            <span className="text">Log out</span>
         </div>
       </div>
     </div>
