@@ -1,5 +1,7 @@
 import React from "react";
+import AdminOrders from "./AdminOrders";
 import AdminSideNav from "./AdminSideNav";
+import AdminStats from "./AdminStats";
 import "./styles/styles.admin.css"
 
 function AdminPage() {
@@ -8,7 +10,8 @@ function AdminPage() {
       <div className="adminWrapper">
         <AdminSideNav/>
         <div className="main">
-          main section
+          <AdminStats/>
+          <AdminOrders/>
         </div>
       </div>
     </div>
