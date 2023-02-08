@@ -24,10 +24,7 @@ const getOneParcel = async (req, res) => {
   }
 };
 
-
-
 module.exports = {
   getAllParcels,
   getOneParcel,
- 
 };

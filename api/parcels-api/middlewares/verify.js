@@ -16,7 +16,8 @@ const verify = async (req,res, next)=>{
    
     next()
     }catch(error){
-        return res.status(401).json({ message: error.message });
+        console.log(error);
+        return res.status(401).json({ message: 'Log in first' });
     }
 }
 module.exports = verify
