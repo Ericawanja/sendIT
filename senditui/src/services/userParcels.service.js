@@ -27,8 +27,8 @@ class UserParcels {
       let response = await axios.get(url, this.config);
       return response;
     } catch (error) {
-     
-      let message = "An error occured";
+     console.log(error);
+      let message = error.response.data.message || "An error occured";
       return { data: null, error: message };
     }
   }

@@ -31,9 +31,9 @@ function Orders() {
       {error ? (
         <div className="errorContainer">
           <span className="error">{error}</span>
-          <span onClick={handleSignIn} className="signIn">
+          {/* <span onClick={handleSignIn} className="signIn">
             Sign in
-          </span>
+          </span> */}
         </div>
       ) : loading ? (
         <Loader />
