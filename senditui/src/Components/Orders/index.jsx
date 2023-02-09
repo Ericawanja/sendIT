@@ -48,7 +48,7 @@ function Orders() {
             />
           </span>
           {parcels.length > 0 ? (
-            <table>
+            <table className="userParcelsTable">
               <thead>
                 <tr>
                   <th>Order Id</th>
