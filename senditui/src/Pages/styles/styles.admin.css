@@ -91,3 +91,12 @@
     font-size: 1.2rem;
     text-transform: capitalize;
 }
+.ellipsis{
+    display: none;
+}
+.ellipsis:hover{
+    display: block;
+}
+.adminTable tr:nth-child(even) {
+  background-color: rgba(111, 109, 109, .2);
+}
