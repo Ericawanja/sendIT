@@ -7,5 +7,6 @@ create table parcels(
     weight DECIMAL NOT NULL,
     price Money NOT NULL,
     status varchar(150) NOT NULL,
-    isdeleted BIT default 0
+    isdeleted BIT default 0,
+    created_on DATE DEFAULT CAST(GETDATE AS DATE)
 )

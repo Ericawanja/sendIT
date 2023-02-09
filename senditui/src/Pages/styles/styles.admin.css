@@ -100,3 +100,7 @@
 .adminTable tr:nth-child(even) {
   background-color: rgba(111, 109, 109, .2);
 }
+.error{
+  text-align: center;
+  margin: 90px 0;
+}
