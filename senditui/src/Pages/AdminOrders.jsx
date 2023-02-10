@@ -15,10 +15,7 @@ function AdminOrders() {
 
   console.log(user)
   useEffect(() => {
-    if (!user.admin){
-      navigate("/login")
-
-    }
+   
      dispatch(getAdminParcels("all"));
   }, []);
   return (
